@@ -68,4 +68,6 @@ RUN apk add --no-cache --virtual .build-deps-yarn curl gnupg tar \
   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz \
   && apk del .build-deps-yarn
 
+RUN apk update && apk add --no-cache git shadow
+
 RUN npm install -g gulp
